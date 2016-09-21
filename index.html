@@ -55,6 +55,22 @@
 			.small {
 				font-size: 14px;
 			}
+
+			.next {
+				opacity: 0;
+				-webkit-transform: translateY(10px);
+				-moz-transform: translateY(10px);
+				transform: translateY(10px);
+				-webkit-transition: visibility 0.5s linear, opacity 0.5s linear, transform 0.5s linear;
+				-moz-transition: visibility 0.5s linear, opacity 0.5s linear, transform 0.5s linear;
+				-o-transition: visibility 0.5s linear, opacity 0.5s linear, transform 0.5s linear;
+			}
+			.next.active {
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				-moz-transform: translateY(0);
+				transform: translateY(0);
+			}
 		</style>
 	</section>
 	<section class="slide">
@@ -237,52 +253,60 @@
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
+		<h2>Query Buckets...</h2>
+		<h3>main.go...</h3>
 	</section>
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>The Postman has come and gone</h2>
+		<p>Time to build the client...</p>
+		<a href="https://angular.io" target="_TOP">
+			<img src="pictures/angular.png" alt="" class="cover ng-logo">
+		</a>
+		<style>
+			.slide img.cover.ng-logo {
+				left: 75%;
+				top: 40%;
+			}
+			#fountain {
+				max-width: 150px;
+				top: 75%;
+			}
+		</style>
+		<p class="next">Yo' man, maybe you should use the CLI.</p>
+		<a href="http://fountainjs.io" class="next" target="_TOP">
+			<img src="pictures/fountainjs.png" alt="" id="fountain" class="cover">
+		</a>
+	</section>
+	<section class="slide">
+		<h2>View</h2>
+		<style>
+			pre.small {
+				margin-left: 70px;
+			}
+		</style>
+		<pre class="small">
+			<code>&lt;div id="results-container" class="results-container"&gt;</code>
+			<code>  &lt;h4 class="error"&lt;{{ err }}&lt;/h4&gt;</code>
+			<code>  &lt;div class="user-input"&gt;</code>
+			<code>	  &lt;i class="icon-magnifier"&gt;&lt;/i&gt; &lt;input #query</code>
+			<code>      <span class="red">(keyup)="search(query.value)"</span> placeholder="comma-separated"&gt;</code>
+			<code>	  &lt;span class="count" [style.color]="getStyle(results.length)"&gt;{{results.length}}&lt;/span&gt;</code>
+			<code>  &lt;/div&gt;</code>
+			<code>  &lt;div class="results"</code>
+			<code> 		infinite-scroll</code>
+			<code>        [infiniteScrollDistance]="20"</code>
+			<code>        [infiniteScrollThrottle]="200"</code>
+			<code>        (scrolled)="onScroll()"&gt;</code>
+			<code>    &lt;Result class="flyIn" *ngFor="let result of visibleResults" [result]="result"&gt;&lt;/Result&gt;</code>
+			<code>  &lt;/div&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">Let's take a closer look...</h2>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">Ug, ok enough talking just show me the app!</h2>
 	</section>
 	<section class="slide">
 		<h2>Inner navigation</h2>
